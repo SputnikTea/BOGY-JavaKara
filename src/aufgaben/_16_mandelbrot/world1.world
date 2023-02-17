@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XmlWorld sizex="200" sizey="200" version="KaraX 1.0 javakara">
+  <XmlWallPoints/>
+  <XmlObstaclePoints/>
+  <XmlPaintedfieldPoints/>
+  <XmlKaraList>
+    <XmlKara x="10" y="9" direction="3" name="Kara"/></XmlKaraList>
+  <XmlStreetList/></XmlWorld>

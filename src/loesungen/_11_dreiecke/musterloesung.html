@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+
+<h1>Dreiecke zeichnen</h1>
+
+<p>Kara kann das Dreieck zeilenweise zeichnen. Dazu zeichnet er
+abwechslungsweise Zeilen von links nach rechts und von rechts nach
+links:</p>
+
+<pre>int currentWidth = 1;
+boolean left2right = true;
+
+for (int y = 0; y &lt; HEIGHT-1; y++) {
+  paintRow (currentWidth);
+  gotoNextRow (left2right);
+  left2right = !left2right;
+  currentWidth = currentWidth + 2;
+}
+paintRow (currentWidth);
+</pre>
+
+
+</body>
+
+</html>

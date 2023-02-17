@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+
+<h1>Apfelmännchen zeichnen (sehr schwierig)</h1>
+
+<p>Um das Apfelmännchen zu zeichnen, muss für jeden
+Punkt in der Welt von Kara die "Farbe" bestimmt werden (Funktion fahrstreckentest()). 
+Dazu müssen zuerst die Koordinaten aus der Kara-Welt in die entsprechenden Koordinaten in der
+"Apfelwelt" umgerechnet werden (Funktionen berechneApfelX() und berechneApfelY()).</p> 
+
+<pre>
+for (int row = 0; row &lt; KARA_HEIGHT; row++) {
+  for (int col = 0; col &lt; KARA_WIDTH; col++) {
+    double x = berechneApfelX(col);
+    double y = berechneApfelY(row);
+
+    int i = fahrstreckentest(x, y);
+    if (i == ITERATIONS) {
+      world.setLeaf(col, row, true);
+      tools.checkState();
+    }
+  }
+}
+</pre>
+
+</body>
+
+</html>

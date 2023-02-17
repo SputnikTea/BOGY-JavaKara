@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+
+<h1>PacMan &ndash; Kleeblätter fressen</h1>
+
+<p>Kara sucht in folgender Reihenfolge nach dem nächsten
+Kleeblatt (siehe untenstehende Abbildung):</p>
+
+<ul>
+	<li>Auf dem Feld vor ihm.</li>
+	<li>Auf dem Feld links von seiner Ausgangsposition.</li>
+	<li>Auf dem Feld rechts von seiner Ausgangsposition.</li>
+</ul>
+
+<p><img src="pacman-algorithm.gif"></p>
+
+<p>Folgender Programmteil führt diese Suche aus:</p>
+
+<pre>kara.move();      
+if (!kara.onLeaf()) {     
+  turnAround();           
+  kara.move();
+  kara.turnRight();
+  kara.move();
+  if (!kara.onLeaf()) {   
+    turnAround();         
+    kara.move();
+    kara.move();
+  }
+}
+kara.removeLeaf();
+</pre>
+
+</body>
+
+</html>

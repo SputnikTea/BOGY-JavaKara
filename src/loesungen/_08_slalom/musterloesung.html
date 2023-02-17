@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+
+<h1>Slalom laufen</h1>
+
+<p>Kara läuft in einer Endlosschleife um die Bäume herum
+Slalom. Dazu muss er abwechslungsweise Links- und Rechts-Drehungen um
+die Bäume machen. Das machen im folgenden Programmauszug die
+Methoden viertelDrehungLinks() bzw viertelDrehungRechts():</p>
+
+<pre>while (true) {
+  while (kara.treeLeft() && !kara.treeRight()) {
+    viertelDrehungLinks();
+  }
+  viertelDrehungRechts();
+  while (!kara.treeLeft() && kara.treeRight()) {
+    viertelDrehungRechts();
+  }
+  viertelDrehungLinks();
+}</pre>
+
+</body>
+</html>

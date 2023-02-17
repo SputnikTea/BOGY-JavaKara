@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="karas">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/karas/multikara.jar!/" />
+      <root url="jar://$PROJECT_DIR$/karas/kara.jar!/" />
+      <root url="jar://$PROJECT_DIR$/karas/javakara.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

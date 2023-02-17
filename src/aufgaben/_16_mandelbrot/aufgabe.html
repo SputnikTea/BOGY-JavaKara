@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+
+<h1>Apfelmännchen zeichnen (sehr schwierig)</h1>
+
+<p><img src="mandelbrot.gif"></p>
+
+<p>Programmieren Sie JavaKara so, dass er "zweifarbige"
+Apfelmännchen zeichnet!</p>
+
+<h2>Was ist ein Apfelmännchen?</h2>
+
+<p>Das Apfelmännchen wurde von Benoit Mandelbrot entdeckt; sie
+repräsentieren die sogenannte Mandelbrot-Menge.</p>
+
+<p>Um erklären zu können, nach welchen Vorschriften eine
+Mandelbrot-Menge berechnet wird, stellen wir uns folgendes vor: Ein
+Mandelbus startet innerhalb eines Kreises an einem Anfangspunkt und
+fährt nach bestimmten Vorschriften einer Strecke nach.</p>
+
+<p><img src="mandelbrot-algorithm.gif"></p>
+
+<p>Gelangt der Mandelbus auf seiner Fahrstrecke ausserhalb des
+Kreises, so ist die Fahrroute ungültig und diese Fahrstrecke wird
+eliminiert, bleibt der Mandelbus hingegen immer im Kreis, so kann diese
+"Stecke" als gültig bezeichnet werden.</p>
+
+<p>Die Fahrstrecke besteht aus Punkten. Den den aktuellen
+Anfangspunkt im Kreis bezeichnen wir als (a | b). Der Mandelbus startet
+im Punkt (a | b) und kommt durch unten dargestellte Berechnung zum
+nächsten Punkt. x und y sind die aktuellen Koordinaten des
+Mandelbusses, beim Start also a und b. (x[neu] | y[neu]) ist der
+nächste Punkt, zu dem sich der Mandelbus bewegt. Liegt nun einer
+dieser Punkte nach einer bestimmten Anzahl Berechnungen nicht mehr im
+Kreis, so ist die aktuelle Fahrroute ungültig.</p>
+
+<h2>Vorgehen für die Berechnung der Punkte in einer
+Mandelbrot-Menge:</h2>
+
+<p>Man nehme einen Punkt (a | b) innerhalb eines Kreises mit Radius
+2 und rechne:</p>
+
+<ul>
+	<li>x[neu] = x&sup2; - y&sup2; + a für die X-Koordinate des
+	neuen Punktes,</li>
+	<li>y[neu] = 2*x*y + b für die Y-Koordinate.</li>
+</ul>
+
+<p>Nun rechne man nach obiger Vorschrift die Fahrstrecke des
+Mandelbusses. Für weitere Stationen des Mandelbusses wird der Punkt
+(x[neu] | y[neu]) immer zum aktuellen Punkt (x | y). So lässt sich
+dann der nächste Punkt als (x[neu] | y[neu]) berechnen.</p>
+
+<p>Diesen Vorgang führen wir für jeden Punkt des Kreises (
+= Anfangspunkte) 100 mal durch. Wenn nach diesen 100 Iterationen mit dem
+gewählten Anfangspunkt der aktuelle Punkt (x | y) nicht aus dem
+Kreis geraten ist, wird der zuvor gewählte Anfangspunkt
+eingefärbt.</p>
+
+<h2>Aufgabe</h2>
+
+<p>Schreiben Sie ein Programm, das in Kara's Welt Apfelmännchen
+zeichnet. Sie können wie folgt vorgehen:</p>
+
+<ol>
+	<li>Schreiben Sie ein Hauptprogramm, das alle Felder in Kara's
+	Welt durchläuft.</li>
+	<li>Rechnen Sie dabei für jedes Feld die Koordinaten des
+	Feldes um auf Koordinaten in einem Koordinatensystem mit (x_min=-2,
+	x_max=2, y_min=-2, y_max=2).</li>
+	<li>Wenden Sie die obige Rechenvorschrift an, um rauszufinden, ob
+	der entsprechende Mandelbus den Kreis mit Radius 2 verlässt oder
+	nicht.</li>
+	<li>Falls der Bus den Kreis verlassen hat, legen Sie je ein
+	Kleeblatt auf das entsprechende Feld in Kara's Welt</li>
+</ol>
+
+</body>
+</html>

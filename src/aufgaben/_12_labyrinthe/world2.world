@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XmlWorld sizex="9" sizey="4" version="KaraX 1.0 javakara">
+  <XmlWallPoints>
+    <XmlPoint x="8" y="3"/>
+    <XmlPoint x="8" y="2"/>
+    <XmlPoint x="7" y="3"/>
+    <XmlPoint x="6" y="3"/>
+    <XmlPoint x="5" y="3"/>
+    <XmlPoint x="4" y="3"/>
+    <XmlPoint x="3" y="3"/>
+    <XmlPoint x="2" y="3"/>
+    <XmlPoint x="0" y="3"/>
+    <XmlPoint x="0" y="2"/>
+    <XmlPoint x="0" y="1"/>
+    <XmlPoint x="1" y="1"/>
+    <XmlPoint x="2" y="1"/>
+    <XmlPoint x="3" y="1"/>
+    <XmlPoint x="5" y="1"/>
+    <XmlPoint x="6" y="1"/>
+    <XmlPoint x="8" y="1"/>
+    <XmlPoint x="1" y="3"/>
+    <XmlPoint x="4" y="1"/></XmlWallPoints>
+  <XmlObstaclePoints/>
+  <XmlPaintedfieldPoints>
+    <XmlPoint x="7" y="0" type="0"/></XmlPaintedfieldPoints>
+  <XmlKaraList>
+    <XmlKara x="1" y="2" direction="3" name="Kara"/></XmlKaraList>
+  <XmlStreetList/></XmlWorld>
