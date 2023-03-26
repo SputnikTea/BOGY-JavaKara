@@ -13,6 +13,10 @@ public class KleeblaetterAufnehmen extends JavaKaraProgram {
 		// program.run("classes/aufgaben/_00_kleeblaetter_aufnehmen/world3.world");
 	}
 
+	static public JavaKaraProgram testProgramm() {
+		return new KleeblaetterAufnehmen();
+	}
+
 	@Override
 	public void myMainProgram() {
 		invertLeaf();
