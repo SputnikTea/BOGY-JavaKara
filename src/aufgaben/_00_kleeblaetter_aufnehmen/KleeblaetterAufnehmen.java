@@ -8,9 +8,9 @@ public class KleeblaetterAufnehmen extends JavaKaraProgram {
 		JavaKaraProgram program = new KleeblaetterAufnehmen();
 		program.run("src/aufgaben/_00_kleeblaetter_aufnehmen/world1.world");
 		// oder:
-		// program.run("classes/aufgaben/_00_kleeblaetter_aufnehmen/world2.world");
+		// program.run("src/aufgaben/_00_kleeblaetter_aufnehmen/world2.world");
 		// oder:
-		// program.run("classes/aufgaben/_00_kleeblaetter_aufnehmen/world3.world");
+		// program.run("src/aufgaben/_00_kleeblaetter_aufnehmen/world3.world");
 	}
 
 	@Override

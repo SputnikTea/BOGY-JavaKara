@@ -6,7 +6,7 @@ public class WeltDrehenNachLinks extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new WeltDrehenNachLinks();
-		program.run("classes/arrays/aufgaben/_03_welt_drehen/drehen.world");
+		program.run("src/arrays/aufgaben/_03_welt_drehen/drehen.world");
 	}
 
 	@Override

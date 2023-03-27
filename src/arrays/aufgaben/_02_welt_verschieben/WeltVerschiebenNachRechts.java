@@ -6,12 +6,12 @@ public class WeltVerschiebenNachRechts extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new WeltVerschiebenNachRechts();
-		program.run("classes/arrays/aufgaben/_02_welt_verschieben/verschieben.world");
+		program.run("src/arrays/aufgaben/_02_welt_verschieben/verschieben.world");
 	}
 
 	@Override
 	public void myMainProgram() {
-		// hier kommt das Hauptprogramm Ihrer Lösung hin
+		// hier kommt das Hauptprogramm Ihrer Lï¿½sung hin
 	}
 
 }

@@ -6,16 +6,16 @@ public class TunnelEingangSuchen extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new TunnelEingangSuchen();
-		program.run("classes/aufgaben/_01_tunnel_eingang/world1.world");
+		program.run("src/aufgaben/_01_tunnel_eingang/world1.world");
 		// oder:
-		// program.run("classes/aufgaben/_01_tunnel_eingang/world2.world");
+		// program.run("src/aufgaben/_01_tunnel_eingang/world2.world");
 		// oder:
-		// program.run("classes/aufgaben/_01_tunnel_eingang/world3.world");
+		// program.run("src/aufgaben/_01_tunnel_eingang/world3.world");
 	}
 
 	@Override
 	public void myMainProgram() {
-		// hier kommt das Hauptprogramm Ihrer Lösung hin
+		// hier kommt das Hauptprogramm Ihrer Lï¿½sung hin
 	}
 
 }

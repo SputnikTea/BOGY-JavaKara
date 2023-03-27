@@ -6,16 +6,16 @@ public class BubbleSort extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new BubbleSort();
-		program.run("classes/aufgaben/_15_bubblesort/world1.world");
+		program.run("src/aufgaben/_15_bubblesort/world1.world");
 		// oder:
-		// program.run("classes/aufgaben/_15_bubblesort/world2.world");
+		// program.run("src/aufgaben/_15_bubblesort/world2.world");
 		// oder:
-		// program.run("classes/aufgaben/_15_bubblesort/world3.world");
+		// program.run("src/aufgaben/_15_bubblesort/world3.world");
 	}
 
 	@Override
 	public void myMainProgram() {
-		// hier kommt das Hauptprogramm Ihrer Lösung hin
+		// hier kommt das Hauptprogramm Ihrer Lï¿½sung hin
 	}
 
 }

@@ -6,7 +6,7 @@ public class WeltSpiegelnVertikal extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new WeltSpiegelnVertikal();
-		program.run("classes/arrays/aufgaben/_01_welt_spiegeln/vertikal-spiegeln.world");
+		program.run("src/arrays/aufgaben/_01_welt_spiegeln/vertikal-spiegeln.world");
 	}
 
 	@Override

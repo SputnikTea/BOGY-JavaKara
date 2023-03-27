@@ -6,16 +6,16 @@ public class Slalom extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new Slalom();
-		program.run("classes/aufgaben/_08_slalom/world1.world");
+		program.run("src/aufgaben/_08_slalom/world1.world");
 		// oder:
-		// program.run("classes/aufgaben/_08_slalom/world2.world");
+		// program.run("src/aufgaben/_08_slalom/world2.world");
 		// oder:
-		// program.run("classes/aufgaben/_08_slalom/world3.world");
+		// program.run("src/aufgaben/_08_slalom/world3.world");
 	}
 
 	@Override
 	public void myMainProgram() {
-		// hier kommt das Hauptprogramm Ihrer Lösung hin
+		// hier kommt das Hauptprogramm Ihrer Lï¿½sung hin
 	}
 
 }

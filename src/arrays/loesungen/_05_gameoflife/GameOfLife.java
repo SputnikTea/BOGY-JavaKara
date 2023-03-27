@@ -6,11 +6,11 @@ public class GameOfLife extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new GameOfLife();
-		program.run("classes/aufgaben/_13_gameoflife/world1.world");
+		program.run("src/aufgaben/_13_gameoflife/world1.world");
 		// oder:
-		// program.run("classes/aufgaben/_13_gameoflife/world2.world");
+		// program.run("src/aufgaben/_13_gameoflife/world2.world");
 		// oder:
-		// program.run("classes/aufgaben/_13_gameoflife/world3.world");
+		// program.run("src/aufgaben/_13_gameoflife/world3.world");
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class GameOfLife extends JavaKaraProgram {
 		boolean[][] cells = new boolean[SIZE_Y][SIZE_X];
 		boolean[][] newCells = new boolean[SIZE_Y][SIZE_X];
 
-		// mit dem folgenden Code kann die Welt zufällig
+		// mit dem folgenden Code kann die Welt zufï¿½llig
 		// initialisiert werden
 
 		/*
@@ -67,7 +67,7 @@ public class GameOfLife extends JavaKaraProgram {
 	boolean newCellValue(boolean[][] cells, int y, int x) {
 		int neighbors = countNeighborsIncl(cells, y, x);
 		if (cells[y][x]) {
-			neighbors = neighbors - 1; // Zelle selbst zählt nicht
+			neighbors = neighbors - 1; // Zelle selbst zï¿½hlt nicht
 			return (neighbors == 2) || (neighbors == 3);
 		}
 		else {

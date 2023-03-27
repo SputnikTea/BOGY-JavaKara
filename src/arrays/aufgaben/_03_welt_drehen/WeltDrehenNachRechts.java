@@ -6,12 +6,12 @@ public class WeltDrehenNachRechts extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new WeltDrehenNachRechts();
-		program.run("classes/arrays/aufgaben/_03_welt_drehen/drehen.world");
+		program.run("src/arrays/aufgaben/_03_welt_drehen/drehen.world");
 	}
 
 	@Override
 	public void myMainProgram() {
-		// hier kommt das Hauptprogramm Ihrer Lösung hin
+		// hier kommt das Hauptprogramm Ihrer Lï¿½sung hin
 	}
 
 }

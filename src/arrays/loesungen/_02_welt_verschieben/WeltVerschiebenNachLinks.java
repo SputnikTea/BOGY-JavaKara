@@ -6,7 +6,7 @@ public class WeltVerschiebenNachLinks extends JavaKaraProgram {
 
 	public static void main(String[] args) {
 		JavaKaraProgram program = new WeltVerschiebenNachLinks();
-		program.run("classes/arrays/aufgaben/_02_welt_verschieben/verschieben.world");
+		program.run("src/arrays/aufgaben/_02_welt_verschieben/verschieben.world");
 	}
 
 	@Override
