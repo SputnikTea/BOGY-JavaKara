@@ -25,12 +25,9 @@ public class BubbleSort extends JavaKaraProgram {
 		int[] A = new int[world.getSizeY()];
 
 		while (y < world.getSizeY()) {
-			while (world.isLeaf(x, y) && x + 1 < world.getSizeX()) {
+			while (x<world.getSizeX() && world.isLeaf(x,y)) {
 				numberofleaf++;
 				x++;
-			}
-			if (numberofleaf == 8 && world.isLeaf(world.getSizeX() - 1, y)) {
-				numberofleaf++;
 			}
 			if (numberofleaf == 0 && world.isLeaf(0, y)) {
 				numberofleaf++;
