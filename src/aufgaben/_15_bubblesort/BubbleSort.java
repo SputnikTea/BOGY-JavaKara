@@ -19,24 +19,9 @@ public class BubbleSort extends JavaKaraProgram {
 	@Override
 	public void myMainProgram() {
 
-		int numberofleaf = 0;
 		int x = 0;
 		int y = 0;
-		int[] A = new int[world.getSizeY()];
-
-		while (y < world.getSizeY()) {
-			while (x<world.getSizeX() && world.isLeaf(x,y)) {
-				numberofleaf++;
-				x++;
-			}
-			if (numberofleaf == 0 && world.isLeaf(0, y)) {
-				numberofleaf++;
-			}
-			A[y] = numberofleaf;
-			y++;
-			x = 0;
-			numberofleaf = 0;
-		}
+		int[] A = countLeafsPerRow();
 		System.out.println(Arrays.toString(A));
 
 
@@ -64,5 +49,19 @@ public class BubbleSort extends JavaKaraProgram {
 			}
 			y++;
 		}
+	}
+
+	private int[] countLeafsPerRow() {
+		int[] A = new int[world.getSizeY()];
+		for(int row=0; row < world.getSizeY(); row++){
+			int leafCount =0;
+			int column = 0;
+			while (column<world.getSizeX() && world.isLeaf(column, row)) {
+				leafCount++;
+				column++;
+			}
+			A[row] = leafCount;
+		}
+		return A;
 	}
 }
