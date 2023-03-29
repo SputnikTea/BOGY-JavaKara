@@ -11,7 +11,18 @@ public class Spirale extends JavaKaraProgram {
 
 	@Override
 	public void myMainProgram() {
-		// hier kommt das Hauptprogramm Ihrer L�sung hin
+      int leafs=1;
+	  int i=0;
+	  while (leafs<21){
+		  while (i<leafs){
+			  kara.putLeaf();
+			  kara.move();
+			  i++;
+		  }
+		  kara.turnRight();
+		  leafs++;
+		  i=0;
+	  }
 	}
 
 }
