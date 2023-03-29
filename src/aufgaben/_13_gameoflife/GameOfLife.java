@@ -34,6 +34,30 @@ public class GameOfLife extends JavaKaraProgram {
 				if(vonKleeblaetternBedeckt[Element]>0 && vonKleeblaetternBedeckt[Element-1]==1){
 					AnzahlNachbarfelderV++;
 				}
+				if(vonKleeblaetternBedeckt[Element]> world.getSizeX()+1 && vonKleeblaetternBedeckt[Element- world.getSizeX()-1]==1){
+					AnzahlNachbarfelderV++;
+				}
+				if(vonKleeblaetternBedeckt[Element]> world.getSizeX() && vonKleeblaetternBedeckt[Element- world.getSizeX()]==1){
+					AnzahlNachbarfelderV++;
+				}
+				if(vonKleeblaetternBedeckt[Element]> world.getSizeX()-1 && vonKleeblaetternBedeckt[Element- world.getSizeX()+1]==1) {
+					AnzahlNachbarfelderV++;
+
+				}
+					if(vonKleeblaetternBedeckt[Element]< (world.getSizeX()* world.getSizeY()) - world.getSizeX()-1&& vonKleeblaetternBedeckt[Element+ world.getSizeX()-1]==1){
+						AnzahlNachbarfelderV++;
+					}
+					if(vonKleeblaetternBedeckt[Element]< (world.getSizeX()* world.getSizeY()) - world.getSizeX() && vonKleeblaetternBedeckt[Element+ world.getSizeX()]==1){
+						AnzahlNachbarfelderV++;
+					}
+					if(vonKleeblaetternBedeckt[Element]< (world.getSizeX()* world.getSizeY()) - world.getSizeX()+1 && vonKleeblaetternBedeckt[Element+ world.getSizeX()+1]==1){
+						AnzahlNachbarfelderV++;
+					}
+				Element++;
+				AnzahlNachbarfelder[Element]=AnzahlNachbarfelderV;
+				System.out.println(AnzahlNachbarfelderV);
+
+
 			}
 		}
 	}
