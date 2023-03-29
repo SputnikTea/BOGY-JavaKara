@@ -20,25 +20,15 @@ public class BubbleSort extends JavaKaraProgram {
 	public void myMainProgram() {
 
 		int x = 0;
-		int y = 0;
 		int[] A = countLeafsPerRow();
 		System.out.println(Arrays.toString(A));
+		ArraySortieren(x, A);
+		KleeblattreihenNeuAnordnen(A);
+	}
 
-
-		int Tauschvariabel = 0;
-		while (x+1 < world.getSizeY()) {
-			if (A[x] > A[x + 1]) {
-				Tauschvariabel = A[x];
-				A[x] = A[x + 1];
-				A[x + 1] = Tauschvariabel;
-				x = 0;
-				System.out.println(Arrays.toString(A));
-			} else {
-				x++;
-			}
-		}
-
-
+	private void KleeblattreihenNeuAnordnen(int[] A) {
+		int x;
+		int y;
 		world.clearAll();
 		y = 0;
 		while (y< world.getSizeY()) {
@@ -48,6 +38,21 @@ public class BubbleSort extends JavaKaraProgram {
 				x++;
 			}
 			y++;
+		}
+	}
+
+	private void ArraySortieren(int x, int[] A) {
+		int Tauschvariabel;
+		while (x +1 < world.getSizeY()) {
+			if (A[x] > A[x + 1]) {
+				Tauschvariabel = A[x];
+				A[x] = A[x + 1];
+				A[x + 1] = Tauschvariabel;
+				x = 0;
+				System.out.println(Arrays.toString(A));
+			} else {
+				x++;
+			}
 		}
 	}
 
