@@ -7,12 +7,16 @@ public class Labyrinthe extends JavaKaraProgram {
     public static void main(String[] args) {
         JavaKaraProgram program = new Labyrinthe();
         JavaKaraProgram.MIN_SLEEP_TIME = 75;
-         program.run("src/aufgaben/_12_labyrinthe/world1.world");
+        program.run("src/aufgaben/_12_labyrinthe/world1.world");
         // oder:
-         //program.run("src/aufgaben/_12_labyrinthe/world2.world");
+        //program.run("src/aufgaben/_12_labyrinthe/world2.world");
         // oder:
         // program.run("src/aufgaben/_12_labyrinthe/world3.world");
         //program.run("src/aufgaben/_12_labyrinthe/world4.world");
+    }
+
+    public static Labyrinthe testProgram() {
+        return new Labyrinthe();
     }
 
     @Override
@@ -27,7 +31,7 @@ public class Labyrinthe extends JavaKaraProgram {
         kara.removeLeaf();
     }
 
-    private void nachRechtsDrehen() {
+    public void nachRechtsDrehen() {
         turn180();
     }
 
@@ -62,15 +66,16 @@ public class Labyrinthe extends JavaKaraProgram {
                 kara.move();
             }
         }
-            kara.turnLeft();
+        kara.turnLeft();
 
     }
-        void nebenAusgangStellen () {
-            while (kara.treeLeft() && kara.treeRight()) {
-                kara.move();
-            }
+
+    void nebenAusgangStellen() {
+        while (kara.treeLeft() && kara.treeRight()) {
+            kara.move();
         }
-
     }
+
+}
 
 
