@@ -11,13 +11,13 @@ public class GameOfLife extends JavaKaraProgram {
         // oder:
         program.run("src/aufgaben/_13_gameoflife/world2.world");
         // oder:
-         //program.run("src/aufgaben/_13_gameoflife/world3.world");
+        //program.run("src/aufgaben/_13_gameoflife/world3.world");
     }
 
     @Override
     public void myMainProgram() {
         while (true) {
-           PauseZwischenSchritten();
+            PauseZwischenSchritten();
 
             int[] vonKleeblaetternBedeckt = new int[(world.getSizeY() * world.getSizeX())];
             int[] AnzahlNachbarfelder = new int[(world.getSizeY() * world.getSizeX())];
@@ -25,7 +25,7 @@ public class GameOfLife extends JavaKaraProgram {
             ArrayWoKleeblaetterSind(vonKleeblaetternBedeckt);
 
 
-            ArrayAnzahlNachbarfelder(vonKleeblaetternBedeckt, AnzahlNachbarfelder);
+            ArrayAnzahlNachbarfelder2(vonKleeblaetternBedeckt, AnzahlNachbarfelder);
 
             KleeblaetterNeuAnordnen(vonKleeblaetternBedeckt, AnzahlNachbarfelder);
 
@@ -39,18 +39,19 @@ public class GameOfLife extends JavaKaraProgram {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     private void KleeblaetterNeuAnordnen(int[] vonKleeblaetternBedeckt, int[] AnzahlNachbarfelder) {
         int y;
         int x;
         int Element = 0;
-        while (Element< world.getSizeX() * world.getSizeY()) {
+        while (Element < world.getSizeX() * world.getSizeY()) {
             y = 0;
             x = Element;
             if (vonKleeblaetternBedeckt[Element] == 0) {
                 if (AnzahlNachbarfelder[Element] == 3) {
-                    while (x+1> world.getSizeX()) {
+                    while (x + 1 > world.getSizeX()) {
                         x = x - world.getSizeX();
                         y++;
                     }
@@ -58,10 +59,9 @@ public class GameOfLife extends JavaKaraProgram {
                     world.setLeaf(x, y, true);
 
                 }
-            }
-            else {
+            } else {
                 if (!(AnzahlNachbarfelder[Element] == 3) && !(AnzahlNachbarfelder[Element] == 2)) {
-                    while (x+1  > world.getSizeX()) {
+                    while (x + 1 > world.getSizeX()) {
                         x = x - world.getSizeX();
                         y++;
                     }
@@ -91,7 +91,7 @@ public class GameOfLife extends JavaKaraProgram {
             if (Element > world.getSizeX() && vonKleeblaetternBedeckt[Element - world.getSizeX() - 1] == 1) {
                 AnzahlNachbarfelder[Element]++;
             }
-            if (Element > world.getSizeX() -1&& vonKleeblaetternBedeckt[Element - world.getSizeX()] == 1) {
+            if (Element > world.getSizeX() - 1 && vonKleeblaetternBedeckt[Element - world.getSizeX()] == 1) {
                 AnzahlNachbarfelder[Element]++;
             }
             if (Element > world.getSizeX() - 2 && vonKleeblaetternBedeckt[Element - world.getSizeX() + 1] == 1) {
@@ -126,14 +126,101 @@ public class GameOfLife extends JavaKaraProgram {
 
                 if (world.isLeaf(x, y)) {
                     vonKleeblaetternBedeckt[x + (y * world.getSizeX())] = 1;
-                }
-                else {
+                } else {
                     vonKleeblaetternBedeckt[x + (y * world.getSizeX())] = 0;
                 }
                 x++;
             }
             y++;
             x = 0;
+
+        }
+    }
+
+
+    void ArrayAnzahlNachbarfelder2(int[] vonKleeblaetternBedeckt, int[] AnzahlNachbarfelder) {
+
+        int Element = 0;
+        while (Element< world.getSizeX() * world.getSizeY()) {
+
+            AnzahlNachbarfelder[Element] = 0;
+
+            if (Element < (world.getSizeY() * world.getSizeX()) - 1 && vonKleeblaetternBedeckt[Element + 1] == 1) {
+                AnzahlNachbarfelder[Element]++;
+            } else {
+                if (vonKleeblaetternBedeckt[0] == 1) {
+                    AnzahlNachbarfelder[Element]++;
+                }
+            }
+
+                if (Element > 0) {
+                    if(vonKleeblaetternBedeckt[Element - 1] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                } else {
+                    if (vonKleeblaetternBedeckt[(world.getSizeY() * world.getSizeX()) - 1] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+                if (Element > world.getSizeX()) {
+                    if(vonKleeblaetternBedeckt[Element - world.getSizeX() - 1] == 1){
+                    AnzahlNachbarfelder[Element]++;
+                }
+                } else {
+                    if (vonKleeblaetternBedeckt[Element + (world.getSizeY() * (world.getSizeX() - 1)) - 1] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+                if (Element > world.getSizeX() - 1) {
+                    if( vonKleeblaetternBedeckt[Element - world.getSizeX()] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                } else {
+                    if (vonKleeblaetternBedeckt[Element + (world.getSizeX() * (world.getSizeY() - 1))] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+                if (Element > world.getSizeX() - 2) {
+                    if(vonKleeblaetternBedeckt[Element - world.getSizeX() + 1] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                } else {
+                    if (vonKleeblaetternBedeckt[Element + 1 + (world.getSizeX() * (world.getSizeY() - 1))]== 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+                if (Element < ((world.getSizeX() - 1) * world.getSizeY()) + 1) {
+                    if(vonKleeblaetternBedeckt[Element + world.getSizeY() - 1] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                } else {
+                    if (vonKleeblaetternBedeckt[Element - 1 - (world.getSizeX() * (world.getSizeY() - 1))]== 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+
+
+                if (Element < ((world.getSizeX() - 1) * world.getSizeY())) {
+                    if(vonKleeblaetternBedeckt[Element + world.getSizeY()] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                } else {
+                    if (vonKleeblaetternBedeckt[Element - (world.getSizeX() * (world.getSizeY() - 1))] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+                if (Element < ((world.getSizeX() - 1) * world.getSizeY()) - 1) {
+                    if(vonKleeblaetternBedeckt[Element + world.getSizeY() + 1] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                } else {
+                    if (vonKleeblaetternBedeckt[Element + 1- (world.getSizeX() * (world.getSizeY() - 1))] == 1) {
+                        AnzahlNachbarfelder[Element]++;
+                    }
+                }
+
+            Element++;
+
 
         }
     }

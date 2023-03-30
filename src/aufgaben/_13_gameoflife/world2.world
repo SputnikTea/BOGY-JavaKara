@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<XmlWorld sizex="100" sizey="100" version="KaraX 1.0 javakara">
+<XmlWorld sizex="76" sizey="76" version="KaraX 1.0 javakara">
   <XmlWallPoints/>
   <XmlObstaclePoints/>
   <XmlPaintedfieldPoints>
@@ -45,6 +45,68 @@
     <XmlPoint x="16" y="8" type="0"/>
     <XmlPoint x="15" y="9" type="0"/>
     <XmlPoint x="15" y="5" type="0"/>
-    <XmlPoint x="10" y="6" type="0"/></XmlPaintedfieldPoints>
+    <XmlPoint x="10" y="6" type="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <XmlPoint x="41" y="6" type="0"/>
+    <XmlPoint x="41" y="7" type="0"/>
+    <XmlPoint x="40" y="6" type="0"/>
+    <XmlPoint x="40" y="7" type="0"/>
+
+    <XmlPoint x="60" y="4" type="0"/>
+    <XmlPoint x="60" y="5" type="0"/>
+    <XmlPoint x="60" y="6" type="0"/>
+    <XmlPoint x="61" y="4" type="0"/>
+    <XmlPoint x="61" y="5" type="0"/>
+    <XmlPoint x="61" y="6" type="0"/>
+    <XmlPoint x="62" y="7" type="0"/>
+    <XmlPoint x="62" y="3" type="0"/>
+    <XmlPoint x="64" y="7" type="0"/>
+    <XmlPoint x="64" y="3" type="0"/>
+    <XmlPoint x="64" y="8" type="0"/>
+    <XmlPoint x="64" y="2" type="0"/>
+    <XmlPoint x="74" y="5" type="0"/>
+    <XmlPoint x="74" y="4" type="0"/>
+    <XmlPoint x="75" y="5" type="0"/>
+    <XmlPoint x="75" y="4" type="0"/>
+
+
+
+    <XmlPoint x="54" y="7" type="0"/>
+    <XmlPoint x="53" y="4" type="0"/>
+    <XmlPoint x="53" y="10" type="0"/>
+    <XmlPoint x="51" y="5" type="0"/>
+    <XmlPoint x="50" y="7" type="0"/>
+    <XmlPoint x="50" y="8" type="0"/>
+    <XmlPoint x="51" y="9" type="0"/>
+    <XmlPoint x="52" y="10" type="0"/>
+    <XmlPoint x="52" y="4" type="0"/>
+    <XmlPoint x="56" y="7" type="0"/>
+    <XmlPoint x="57" y="7" type="0"/>
+    <XmlPoint x="56" y="6" type="0"/>
+    <XmlPoint x="56" y="8" type="0"/>
+    <XmlPoint x="55" y="9" type="0"/>
+    <XmlPoint x="55" y="5" type="0"/>
+    <XmlPoint x="50" y="6" type="0"/></XmlPaintedfieldPoints>
   <XmlKaraList/>
   <XmlStreetList/></XmlWorld>
