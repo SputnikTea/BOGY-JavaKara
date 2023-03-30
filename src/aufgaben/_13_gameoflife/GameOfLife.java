@@ -11,40 +11,46 @@ public class GameOfLife extends JavaKaraProgram {
         // oder:
         program.run("src/aufgaben/_13_gameoflife/world2.world");
         // oder:
-        // program.run("src/aufgaben/_13_gameoflife/world3.world");
+         //program.run("src/aufgaben/_13_gameoflife/world3.world");
     }
 
     @Override
     public void myMainProgram() {
         while (true) {
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            int[] vonKleeblaetternBedeckt = new int[world.getSizeY() * world.getSizeX()];
-            int[] AnzahlNachbarfelder = new int[world.getSizeY() * world.getSizeX()];
+           PauseZwischenSchritten();
+
+            int[] vonKleeblaetternBedeckt = new int[(world.getSizeY() * world.getSizeX())];
+            int[] AnzahlNachbarfelder = new int[(world.getSizeY() * world.getSizeX())];
 
             ArrayWoKleeblaetterSind(vonKleeblaetternBedeckt);
+
 
             ArrayAnzahlNachbarfelder(vonKleeblaetternBedeckt, AnzahlNachbarfelder);
 
             KleeblaetterNeuAnordnen(vonKleeblaetternBedeckt, AnzahlNachbarfelder);
+
         }
 
+    }
 
+    private static void PauseZwischenSchritten() {
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void KleeblaetterNeuAnordnen(int[] vonKleeblaetternBedeckt, int[] AnzahlNachbarfelder) {
         int y;
         int x;
         int Element = 0;
-        while (Element < world.getSizeX() * world.getSizeY()) {
+        while (Element< world.getSizeX() * world.getSizeY()) {
+            y = 0;
+            x = Element;
             if (vonKleeblaetternBedeckt[Element] == 0) {
                 if (AnzahlNachbarfelder[Element] == 3) {
-                    y = 0;
-                    x = Element;
-                    while (x + 1 > world.getSizeX()) {
+                    while (x+1> world.getSizeX()) {
                         x = x - world.getSizeX();
                         y++;
                     }
@@ -52,15 +58,14 @@ public class GameOfLife extends JavaKaraProgram {
                     world.setLeaf(x, y, true);
 
                 }
-            } else {
+            }
+            else {
                 if (!(AnzahlNachbarfelder[Element] == 3) && !(AnzahlNachbarfelder[Element] == 2)) {
-                    y = 0;
-                    x = Element;
-                    while (x + 1 > world.getSizeX()) {
+                    while (x+1  > world.getSizeX()) {
                         x = x - world.getSizeX();
                         y++;
                     }
-                    world.setLeaf(x, y, false);//removeLeaf
+                    world.setLeaf(x, y, false);
 
                 }
             }
@@ -69,41 +74,40 @@ public class GameOfLife extends JavaKaraProgram {
     }
 
     void ArrayAnzahlNachbarfelder(int[] vonKleeblaetternBedeckt, int[] AnzahlNachbarfelder) {
-        int AnzahlNachbarfelderV;
+
         int Element = 0;
         while (Element < world.getSizeX() * world.getSizeY()) {
 
-            AnzahlNachbarfelderV = 0;
+            AnzahlNachbarfelder[Element] = 0;
 
-            if
-            (Element < (world.getSizeY() * world.getSizeX()) - 1 && vonKleeblaetternBedeckt[Element + 1] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element < (world.getSizeY() * world.getSizeX()) - 1 && vonKleeblaetternBedeckt[Element + 1] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
 
             if (Element > 0 && vonKleeblaetternBedeckt[Element - 1] == 1) {
-                AnzahlNachbarfelderV++;
+                AnzahlNachbarfelder[Element]++;
             }
 
-            if (Element > world.getSizeX() + 1 && vonKleeblaetternBedeckt[Element - world.getSizeX() - 1] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element > world.getSizeX() && vonKleeblaetternBedeckt[Element - world.getSizeX() - 1] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
-            if (Element > world.getSizeX() && vonKleeblaetternBedeckt[Element - world.getSizeX()] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element > world.getSizeX() -1&& vonKleeblaetternBedeckt[Element - world.getSizeX()] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
-            if (Element > world.getSizeX() - 1 && vonKleeblaetternBedeckt[Element - world.getSizeX() + 1] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element > world.getSizeX() - 2 && vonKleeblaetternBedeckt[Element - world.getSizeX() + 1] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
 
-            if (Element < ((world.getSizeX() - 1) * world.getSizeY()) + 1 && vonKleeblaetternBedeckt[Element + world.getSizeX() - 1] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element < ((world.getSizeX() - 1) * world.getSizeY()) + 1 && vonKleeblaetternBedeckt[Element + world.getSizeY() - 1] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
-            if (Element < ((world.getSizeX() - 1) * world.getSizeY()) && vonKleeblaetternBedeckt[Element + world.getSizeX()] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element < ((world.getSizeX() - 1) * world.getSizeY()) && vonKleeblaetternBedeckt[Element + world.getSizeY()] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
-            if (Element < ((world.getSizeX() - 1) * world.getSizeY()) - 1 && vonKleeblaetternBedeckt[Element + world.getSizeX() + 1] == 1) {
-                AnzahlNachbarfelderV++;
+            if (Element < ((world.getSizeX() - 1) * world.getSizeY()) - 1 && vonKleeblaetternBedeckt[Element + world.getSizeY() + 1] == 1) {
+                AnzahlNachbarfelder[Element]++;
             }
-            AnzahlNachbarfelder[Element] = AnzahlNachbarfelderV;
+
             Element++;
 
 
@@ -114,22 +118,22 @@ public class GameOfLife extends JavaKaraProgram {
     void ArrayWoKleeblaetterSind(int[] vonKleeblaetternBedeckt) {
         int y = 0;
         int x = 0;
-        int yWert = 0;
+
 
         while (y < world.getSizeY()) {
 
             while (x < world.getSizeX()) {
 
                 if (world.isLeaf(x, y)) {
-                    vonKleeblaetternBedeckt[x + yWert] = 1;
-                } else {
-                    vonKleeblaetternBedeckt[x + yWert] = 0;
+                    vonKleeblaetternBedeckt[x + (y * world.getSizeX())] = 1;
+                }
+                else {
+                    vonKleeblaetternBedeckt[x + (y * world.getSizeX())] = 0;
                 }
                 x++;
             }
             y++;
             x = 0;
-            yWert = y * world.getSizeX();
 
         }
     }
