@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<XmlWorld sizex="76" sizey="76" version="KaraX 1.0 javakara">
+<XmlWorld sizex="100" sizey="76" version="KaraX 1.0 javakara">
   <XmlWallPoints/>
   <XmlObstaclePoints/>
   <XmlPaintedfieldPoints>
